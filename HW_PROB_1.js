@@ -1,8 +1,8 @@
-/* Not a real hash table--a sort of 
+/* Not a real hash table--a sort of
    pseudo hash table.  We are using
    numbers and instead of hashing them,
-   we just use the number as the index
-   left in the hash routine but commented it out
+   we just use the number as the index.
+   Left in the hash routine but commented it out
    as it's not needed.
 
    The problem consists of the following:
