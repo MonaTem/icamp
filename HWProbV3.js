@@ -1,8 +1,8 @@
 /* Use a hash table to find a pair of numbers in
    an array that sums to a sum parameter */
 
-var A = [62, 734, 8, 102, 97, 250, 781];
-var n = 164;
+var A = [-1, 62, 734, 8, 102, 97, 250, 781];
+var n = 780;
 var size = A.length;
 
 function HashTable(size) {
@@ -53,7 +53,7 @@ const findSum = (A, X) => {
   MyHT = new HashTable(size);
   for (i = 0; i<= size; i++) {
     var temp = X - A[i];
-    if (temp >= 0 && MyHT.get(temp)) {
+    if (MyHT.get(temp)) {
       console.log(`pair with given sum is ${temp} and ${A[i]}`);
       break;
     }
