@@ -1,21 +1,14 @@
-/* Not a real hash table--a sort of
-   pseudo hash table.  We are using
-   numbers and instead of hashing them,
-   we just use the number as the index.
-   Left in the hash routine but commented it out
-   as it's not needed.
-
-   The problem consists of the following:
+/* The problem consists of the following:
    Given an array of numbers and a single sum,
    find the pair of numbers that add up to the
    sum.  Solve the problem using a hash table
    as the algorithm complexity is O(n) and therefore
    faster */
 
-// var A = [6, 3, 5, 2, 1, 7];
-// var X = 4;
-var A = [1, 4, 45, 6, 10, 8];
-var X = 16;
+var A = [6, 3, 5, 2, 1, 7];
+var X = 4;
+// var A = [1, 4, 45, 6, 10, 8];
+// var X = 16;
 var size = A.length;
 
 function HashTable(size) {
@@ -28,17 +21,17 @@ function HashNode(key, value, next) {
   this.value = value;
   this.next = next || null;
 }
-//  HashTable.prototype.hash = function(key) {
-//    var total = 0;
-//    for (i = 0; i < key.length; i++) {
-//      total += key.charCodeAt(i);
-//    }
-//    var bucket = total % this.numbuckets;
-//    return bucket;
-//  }
+ HashTable.prototype.hash = function(key) {
+   var total = key;
+  //  for (i = 0; i < key.length; i++) {
+  //    total += key.charCodeAt(i);
+  //  }
+   var bucket = total % 10;
+   return bucket;
+ }
 
  HashTable.prototype.insert = function (key, value) {
-   var index = key;
+   var index = this.hash(key);
    if (!this.buckets[index]) this.buckets[index] = new HashNode(key, value);
    else {
     var currentNode = this.buckets[index];
@@ -50,7 +43,7 @@ function HashNode(key, value, next) {
  }
 
  HashTable.prototype.get = function(key) {
-  var index = key;
+  var index = this.hash(key);
   if (!this.buckets[index]) return null;
   else {
     var currentNode = this.buckets[index];
@@ -73,7 +66,7 @@ function HashNode(key, value, next) {
      }
      MyHT.insert(A[i], A[i]);
    }
-
+ console.log(MyHT);
  }
 
 
