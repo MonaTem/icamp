@@ -66,7 +66,7 @@ function HashNode(key, value, next) {
      }
      MyHT.insert(A[i], A[i]);
    }
- console.log(MyHT);
+ // console.log(MyHT);
  }
 
 
