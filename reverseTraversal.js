@@ -11,7 +11,7 @@
 
 
 //Regular case: mixed odd and even numbers:
-// const arr = [1, 2, 5, 6, 8, -1, -1, -1];
+const arr = [1, 2, 5, 6, 8, -1, -1, -1];
 //Regular case: all odd numbers:
 // const arr = [1, 3, 7, 9, 5];
 //Regular case: all even numbers:
@@ -40,7 +40,7 @@ const cloneEvenNumbers = (arr) => {
     i = arr.length - 1;
     if (end >= 0) {
       while (i >= 0) {
-        if (arr[end] != "" && arr[end] % 2 === 0) {
+        if (arr[end] !== "" && arr[end] % 2 === 0) {
           arr[i] = arr[end];
           i--;
           arr[i] = arr[end];
