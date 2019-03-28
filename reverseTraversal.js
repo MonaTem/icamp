@@ -37,7 +37,7 @@ const getLastNumber = (arr) => {
 const cloneEvenNumbers = (arr) => {
   if (arr) {
     let end = getLastNumber(arr);
-    i = arr.length - 1;
+    let i = arr.length - 1;
     if (end >= 0) {
       while (i >= 0) {
         if (arr[end] !== "" && arr[end] % 2 === 0) {
