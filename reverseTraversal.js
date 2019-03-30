@@ -24,8 +24,12 @@ const arr = [1, 2, 5, 6, 8, -1, -1, -1];
 // const arr = null;
 //Corner case: empty array:
 // const arr = Array(10);
+//Corner case: empty array:
+// const arr = [];
 //Corner case: array with only blanks:
 // const arr = ['','',''];
+//Sanity check: nothing passed in:
+// cloneEvenNumbers();
 
 const getLastNumber = (arr) => {
   for (let i = arr.length - 1; i >= 0; i--) {
