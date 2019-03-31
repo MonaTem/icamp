@@ -1,4 +1,5 @@
 const reverseSentence = (str) => {
+  console.time('timing');
   let strArray = str.split(" ");
   let newArray = [];
   let reverseStr = "";
@@ -6,7 +7,9 @@ const reverseSentence = (str) => {
     newArray.push(strArray.pop());
   }
   reverseStr = newArray.join(" ");
+  console.log(reverseStr);
+  console.timeEnd('timing');
   return reverseStr;
 }
 
-reverseSentence("I live in an apartment");
+reverseSentence(" The rain in Spain falls mainly on the plain");

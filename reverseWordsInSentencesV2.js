@@ -1,4 +1,5 @@
 const reverseSentence = (str) => {
+  console.time('timing');
   let reversed = "";
   if (str && str != null) {
     let previousSpace = str.length - 1;
@@ -17,6 +18,8 @@ const reverseSentence = (str) => {
        }
    }
   }
+  console.log(reversed);
+  console.timeEnd('timing')
   return reversed;
 }
 /* Test cases:

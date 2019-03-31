@@ -1,4 +1,5 @@
 const reverseSentence = (str) => {
+  console.time('timing');
   let reverseString = "";
   if (str && str != null) {
     let wordEnd = str.length;
@@ -23,6 +24,8 @@ const reverseSentence = (str) => {
     }
   }
 
+  console.log(reverseString);
+  console.timeEnd('timing');
   return reverseString;
 }
 /* Test cases:
@@ -36,7 +39,7 @@ Corner case: a string with one space in it;
 Sanity check: Pass in nothing;
 */
 //Regular case: a sentence with several words:
-const str = "I live in an apartment";
+// const str = "I live in an apartment";
 // Base case: 1 word sentence
 // const str = "Yes"
 // corner case: empty string
@@ -48,7 +51,7 @@ const str = "I live in an apartment";
 // corner case: null string;
   //  const str = null;
 // corner case: sentence begin with space:
-// const str = " The rain in Spain falls mainly on the plain";
+const str = " The rain in Spain falls mainly on the plain";
 // corner case: sentence ends with space:
 // const str = "Ask not what your country can do for you "
 // corner case: pass in nothing:
