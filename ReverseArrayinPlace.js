@@ -3,7 +3,7 @@ const reverseArrayInPlace = (arr) => {
   if (arr && arr != null) {
     let end = arr.length - 1;
     while (start < end) {
-      var tempVar = arr[start];
+      let tempVar = arr[start];
       arr[start] = arr[end];
       arr[end] = tempVar;
       start++;
