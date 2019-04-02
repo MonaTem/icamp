@@ -1,15 +1,30 @@
+/ const reverseSentence = (str) => {
+//   let reversed = "";
+//   let i = str.length - 1;
+//   let previousSpace = str.length - 1;
+//   while (i >= 0) {
+//     if (i = " ") {
+//       // console.log(str[i-1, previousSpace-1]);
+//       reversed = reversed + str.slice(i-1, previousSpace);
+//       previousSpace = i;
+//       i--;
+//     }
+//   }
+// return reversed;
+// }
+
 const reverseSentence = (str) => {
-  console.time('timing');
-  let strArray = str.split(" ");
-  let newArray = [];
   let reverseStr = "";
-  for (i = strArray.length - 1; i >= 0; i--) {
-    newArray.push(strArray.pop());
+  if (str & str != null) {
+    let strArray = str.split(" ");
+    let newArray = [];
+    for (let i = strArray.length - 1; i >= 0; i--) {
+      newArray.push(strArray.pop());
+    }
+    reverseStr = newArray.join(" ");
   }
-  reverseStr = newArray.join(" ");
-  console.log(reverseStr);
-  console.timeEnd('timing');
   return reverseStr;
 }
 
-reverseSentence(" The rain in Spain falls mainly on the plain");
+// reverseSentence("I live in an apartment");
+reverseSentence();
