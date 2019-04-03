@@ -6,9 +6,9 @@ const twoSum = (arr, sum) => {
     let end = arr.length - 1;
     while (start < end && sum) {
        if (arr[start] + arr[end] === sum) {
-         let index1 = arr[start];
-         let index2 = arr[end];
-         return {index1: index1, index2: index2};
+         let indexStart = arr[start];
+         let indexEnd = arr[end];
+         return {indexStart: indexStart, indexEnd: indexEnd};
        } else if (arr[start] + arr[end] < sum) {
          start++;
               } else if (arr[start] + arr[end] > sum){
