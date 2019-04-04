@@ -8,7 +8,7 @@ const twoSum = (arr, sum) => {
        if (arr[start] + arr[end] === sum) {
          let indexStart = arr[start];
          let indexEnd = arr[end];
-         return {indexStart: indexStart, indexEnd: indexEnd};
+         return {indexStart, indexEnd};
        } else if (arr[start] + arr[end] < sum) {
          start++;
               } else if (arr[start] + arr[end] > sum){
