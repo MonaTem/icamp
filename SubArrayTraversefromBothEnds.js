@@ -1,3 +1,28 @@
+/* Pseudo code:
+
+Pseudo code for SubArrayTraversefromBothEnds:
+
+Check for null or empty array.  If so, return null.
+
+Starting from beginning, find first dip.
+
+Starting from end, find first bump.
+
+If no dip or bump, then array is already sorted, so return null.
+
+Create subarray to be sorted.
+
+Look for max and min in subarray.
+
+Go to the left from beginning of subarray.  If find a number greater than or equal to min, extend subarray to the left.
+
+Go to the right from end of subarray.  If find a number less than or equal to max, extend subarray to the right.
+
+Return the beginning index i and ending index j of subarray.
+
+
+*/
+
 subArrayTraversefromBothEnds = (arr) => {
   let i = 0;
   let j = 0;
