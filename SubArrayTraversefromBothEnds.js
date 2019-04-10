@@ -111,4 +111,8 @@ subArrayTraversefromBothEnds = (arr) => {
 
 // Base case: two elements, sorted:
 
-subArrayTraversefromBothEnds([77, 903]);
+// subArrayTraversefromBothEnds([77, 903]);
+
+// Oddball case:  more than one unsorted portion separated by sorted ones:
+
+subArrayTraversefromBothEnds([1, 2, 8, 5, 7, 9, 10, 3, 4]);
