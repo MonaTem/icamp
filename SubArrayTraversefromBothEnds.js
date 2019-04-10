@@ -5,12 +5,15 @@ subArrayTraversefromBothEnds = (arr) => {
 
  if (!arr) return null;
 
+ // find first dip from beginning
+
  for (i = 0; i <= arr.length - 1; i++) {
    if (arr[i+1] < arr[i]) {
       break;
    }
  }
 
+// find first bump from end
 
  for (j = arr.length - 1; j >= 0; j--) {
   if (arr[j -1]  > arr[j]) {
