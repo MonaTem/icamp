@@ -54,7 +54,7 @@ subArrayTraversefromBothEnds = (arr) => {
     return null;
   }
 
-  for (k = i; k <=j; k++) {
+  for (let k = i; k <=j; k++) {
     subArray.push(arr[k]);
 
   }
