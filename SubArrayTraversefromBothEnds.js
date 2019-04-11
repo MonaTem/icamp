@@ -115,8 +115,12 @@ subArrayTraversefromBothEnds = (arr) => {
 
 // Oddball case:  more than one unsorted portion separated by sorted ones:
 
-// subArrayTraversefromBothEnds([1, 2, 8, 5, 7, 9, 10, 3, 4]); 
+// subArrayTraversefromBothEnds([1, 2, 8, 5, 7, 9, 10, 3, 4]);
 
 // Oddball case: duplicate numbers
 
 subArrayTraversefromBothEnds([1, 1, 3, 3, 2, 2, 7, 7, 5, 5]);
+
+// Sanity check--pass in nothing
+
+subArrayTraversefromBothEnds();
