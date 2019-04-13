@@ -19,6 +19,8 @@ When loop is done, return array.
 */
 
 const dutchNationalFlag = (a, X) => {
+
+  if (a == null || X < 0 || X > a.length) return a;
   let low = -1;
   let mid = -1;
   let high = a.length;
