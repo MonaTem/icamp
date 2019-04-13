@@ -25,23 +25,21 @@ const dutchNationalFlag = (a, X) => {
   let pivot = a[X];
 
   while (mid+1 < high) {
-    let currentElement = a[mid+1];
-    console.log(currentElement);
     switch (true) {
-      case currentElement > pivot:
+      case a[mid+1] > pivot:
         let temp2 = a[high-1];
-        a[high-1] = currentElement;
+        a[high-1] = a[mid+1];
         a[mid+1] = temp2;
         high--;
         break;
 
-      case currentElement === pivot:
+      case a[mid+1] === pivot:
         mid++;
         break;
 
-      case currentElement < pivot:
+      case a[mid+1] < pivot:
         let temp = a[low+1];
-        a[low+1] = currentElement;
+        a[low+1] = a[mid+1];
         a[mid+1] = temp;
         low++;
         mid++;
