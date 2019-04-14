@@ -10,6 +10,8 @@
   const moveZeroestoEndArray = (A) => {
     let count = 0;
 
+    if (!A) return null;
+
     for (let i = 0; i < A.length; i++) {
       if (A[i] !== 0) {
         count++;
@@ -24,4 +26,30 @@
     return A;
   }
 
-  moveZeroestoEndArray([2,3,0,3,0,1,0]);
+
+
+  /* Test cases:
+  Regular cases: zeroes interspersed thoughout array,
+  all zeroes already at end of array, all zeroes at beginning of array, no zeroes
+  Base case: 2 element array with zero at beginning, 2 element array with zero at end
+  Edge cases: null array, empty array
+  Sanity check: pass in nothing
+  */
+  // Regular case: zeroes interspersed through array
+  // moveZeroestoEndArray([2,3,0,3,0,1,0]);
+  // Regular case: all zeroes already at end:
+  // moveZeroestoEndArray([2,3,1,7,0,0,0]);
+  // Regular case: all zeroes at beginning of array:
+  // moveZeroestoEndArray([0, 0, 0, 55, 101, 1347, 98]);
+  // Regular case: no zeroes
+  // moveZeroestoEndArray([778, 32, 99778, 5, 10, 223]);
+  // Base case: 2 element array with zero at beginning
+  // moveZeroestoEndArray([0, 96504]);
+  // Base case: 2 element array with zero at end
+  // moveZeroestoEndArray([882, 0]);
+  // Edge case: null array
+  // moveZeroestoEndArray(null);
+  // Edge case: empty array
+  // moveZeroestoEndArray([]);
+  // Sanity check: pass in nothing
+  // moveZeroestoEndArray();
