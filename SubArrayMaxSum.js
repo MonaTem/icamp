@@ -21,7 +21,6 @@ const maxSum =(a) => {
       idx2 = i;
       if (idx1 === null) idx1 = i;
 
-      console.log(maxSum, i, idx1, idx2);
 
     }
   }
