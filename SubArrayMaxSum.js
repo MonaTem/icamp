@@ -13,6 +13,8 @@ const maxSumSubArray =(a) => {
   let idx1 = 0;
   let idx2 = 0;
 
+  if (!a) return null;
+
   for (let i = 0; i < a.length; i++) {
     maxSumHere = Math.max(0, maxSumHere + a[i]);
     if (maxSumHere === 0) {
@@ -63,6 +65,15 @@ Sanity check: pass in nothing
 
 */
 
-// maxSumSubArray([1, 2, 0, -7, 8, 0, 9]);
+maxSumSubArray([1, 2, 0, -7, 8, 0, 9]);
 // maxSumSubArray([27, 2, 3, 62]);
 // maxSumSubArray([-33, -28, -505]);
+// maxSumSubArray([-17]);
+// maxSumSubArray([181]);
+// maxSumSubArray([0]);
+// maxSumSubArray([19, -5]);
+// maxSumSubArray([-5, 19]);
+//maxSumSubArray([0, -16, 3]);
+//maxSumSubArray([]);
+// maxSumSubArray(null);
+// maxSumSubArray();
