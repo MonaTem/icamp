@@ -9,6 +9,19 @@ HashTable.prototype.hash = function(key) {
   return key;
 };
 
+HashTable.prototype.insert = function(key, value) {
+  var index = this.hash(key);
+  if (!this.buckets[index])
+     this.buckets[index] = new HashNode(key,value);
+  else {
+    var currentNode = this.buckets[index];
+    while(currentNode) {
+      currentNode = currentNode.next;
+    }
+  currentNode.next = new HashNode(key, value);
+  }
+};
+
 HashTable.prototype.get = function(key, value) {
   var index = this.hash(key);
   if (!this.buckets[index]) return null;
@@ -29,8 +42,11 @@ const SubArrayCommonDiff = (a, X) => {
   MyHT = new HashTable(size);
   for (let i = 0; i < a.length; i++) {
     sum = sum + a[i];
-    if (sum = X)   return {sum, i};
-    if (MyHT.get(sum)) return MyHT.get(sum);
+    if (sum = X)  {
+       return {sum, i}
+    } else if (MyHT.get(sum)) {
+           return MyHT.get(sum);
+           } else MyHT.insert(sum, i);
   }
 }
 
