@@ -10,6 +10,7 @@ def findPair(arr, arr_size, sum):
     temp = sum-arr[i]
     if (temp>=0 and temp in s):
       print("The given sum is", temp, "and", arr[i])
+      
     s.add(arr[i])
 
 # Driver program t test
