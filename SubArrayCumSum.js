@@ -1,13 +1,28 @@
 function HashTable(size) {
   this.buckets = Array(size);
-  this.numbuckets = this.buckets.length;
+  this.numBuckets = this.buckets.length;
 }
 
+function HashNode(key, value, next) {
+  this.key = key;
+  this.value = value;
+  this.next = next || null;
+}
+
+// HashTable.prototype.hash = function(key) {
+//   var total = key;
+//   var bucket = total % 10;
+//   return key;
+// };
+
 HashTable.prototype.hash = function(key) {
-  var total = key;
-  var bucket = total % 10;
-  return key;
-};
+  let total = 0;
+  for (var i = 0; i < key.length; i++) {
+    total += key.charCodeAt(i);
+  }
+  let bucket = total % this.numBuckets;
+  return bucket;
+}
 
 HashTable.prototype.insert = function(key, value) {
   var index = this.hash(key);
@@ -36,13 +51,13 @@ HashTable.prototype.get = function(key, value) {
   }
 };
 
-const SubArrayCommonDiff = (a, X) => {
+const SubArrayCumSum = (a, X) => {
   let sum = 0;
   let size = a.length;
   MyHT = new HashTable(size);
   for (let i = 0; i < a.length; i++) {
     sum = sum + a[i];
-    if (sum = X)  {
+    if (sum === X)  {
        return {sum, i}
     } else if (MyHT.get(sum)) {
            return MyHT.get(sum);
@@ -50,4 +65,4 @@ const SubArrayCommonDiff = (a, X) => {
   }
 }
 
-SubArrayCommonDiff([1, -2], -1);
+SubArrayCumSum([1, -2], -1);
