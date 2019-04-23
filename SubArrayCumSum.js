@@ -30,7 +30,11 @@ HashTable.prototype.insert = function(key, value) {
      this.buckets[index] = new HashNode(key,value);
   else {
     var currentNode = this.buckets[index];
-    while(currentNode) {
+    while (currentNode.next) {
+      if (currentNode.next.key === key) {
+        currentNode.next.value = value;
+        return;
+      }
       currentNode = currentNode.next;
     }
   currentNode.next = new HashNode(key, value);
@@ -65,4 +69,4 @@ const SubArrayCumSum = (a, X) => {
   }
 }
 
-SubArrayCumSum([1, -2], -1);
+SubArrayCumSum([1, -2, 3], 2);
