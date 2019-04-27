@@ -2,15 +2,15 @@ const SubArrayCumSum = (a, X) => {
   if (!a) return null;
   let SumMap = new Map();
   let sum = 0;
-  let firstI = 0;
+  let begin = 0;
   let size = a.length;
   for (let i = 0; i < a.length; i++) {
     sum = sum +a[i];
     if (sum === X) {
-      return {firstI, i};
+      return {begin, i};
     } else if (SumMap.get(i)) {
-      firstI = SumMap.get(i)-1;
-      return {firstI, i};
+      begin = SumMap.get(i)-1;
+      return {begin, i};
            } else SumMap.set(sum, i);
    }
   return null;
