@@ -5,7 +5,8 @@ Uses cumulative sum technique.
 At each index i, keep track of cumulative sum. If we encounter sum X at i,
 return (begin,i) as answer (where those are begin and
 end indices of continuous sub array).
-We also keep an array of old sums. If we find a sum again, we return that subarray.
+We also keep an array of old sums. If we find a sum again, we return the subarray beginning with where that
+sum was plus one and ending with i.
 Return first subarray that sums to the sum we seek.
 Used array to store old sums instead of hash map
 Because not easy to implement hash map in Javascript
@@ -18,7 +19,6 @@ const SubArrayCumSum = (a, X) => {
   let sumArr = [];
   let sum = 0;
   let begin = 0;
-  let size = a.length;
   for (let i = 0; i < a.length; i++) {
     sum = sum + a[i];
     if (sum === X) {
@@ -47,7 +47,7 @@ const SubArrayCumSum = (a, X) => {
 // SubArrayCumSum([77], 77);
 // Base case: single positive number in array without sum
 // SubArrayCumSum([77], -88);
-// Base case:  Single negative number, sith sum
+// Base case:  Single negative number, with sum
 // SubArrayCumSum([-707], -707);
 // Base case:  negative number w no matching sum
 // SubArrayCumSum([-898],-5);
