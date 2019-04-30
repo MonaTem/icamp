@@ -41,6 +41,7 @@ const SubArrayCumSum = (a, X) => {
 // Regular case: sum at end
 // SubArrayCumSum([8, 10, 7, -20], 5);
 // Regular case: sum in middle:
+// NOTE: this test case does not work!
 // SubArrayCumSum([3, -3, 8, 7, -3, 27], 15);
 // Base case: single positive number in array with sum
 // SubArrayCumSum([77], 77);
