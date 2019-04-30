@@ -34,7 +34,7 @@ const SubArrayCumSum = (a, X) => {
 // SubArrayCumSum([1, -2, 3, 4], 2);
 // Regular case: has sum
 // SubArrayCumSum([2,4,-2,1,-3,5,-3], 0);
-// Regular case: do not have sum
+// Regular case: does not have sum
 // SubArrayCumSum([1, -2, 3, 4], 707);
 // Regular case: sum at beginning:
 // SubArrayCumSum([1, -2, 3, 4, 5], 1);
