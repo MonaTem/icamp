@@ -20,7 +20,7 @@ const SubArrayCumSum = (a, X) => {
   let begin = 0;
   let size = a.length;
   for (let i = 0; i < a.length; i++) {
-    sum = sum +a[i];
+    sum = sum + a[i];
     if (sum === X) {
       return {begin, i};
     } else if (sumArr.includes(sum)) {
