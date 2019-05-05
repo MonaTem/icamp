@@ -2,7 +2,7 @@
 Binary search
 Keep dividing array into halves until target is found (or not)
 To calculate midpoint of the current half section instead of dividing start + end by 2
-Divide end - start by 2 andadd that value to start
+Divide end - start by 2 and add that value to start
 This approach avoids possible overflow due to reaching the limit for a JS number,
 which is very large.
 */
