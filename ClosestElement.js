@@ -15,10 +15,11 @@ If this midpoint is closer than the last one replace
 result with the current midpoint.
 */
 const record = (a, mid, result, target) => {
-  if (result === -1 ||
-     (Math.abs(a[mid] - target) <   Math.abs(result - target))
-     return mid;
-  return result;
+ if (result === -1
+   || Math.abs(a[mid] - target) < Math.abs(a[result] - target))
+   return mid;
+return result;
+
 }
 
 const closestElement = (a, target) => {
@@ -41,6 +42,9 @@ const closestElement = (a, target) => {
 
 
 // Test cases
+// Regular case: array w/ no target match, return closest
+closestElement([1,2,4,5,7,8,9], 6);
+
 // Regular case: array of positive numbers, contains target
 // closestElement([1,2,4,7,9],2);
 // Regular case: array of positive numbers, does not contain target
@@ -48,7 +52,7 @@ const closestElement = (a, target) => {
 // Regular case: array of positive numbers, target at end
 // closestElement([1,2,4,7,9], 9);
 // Regular case: array of positive and negative numbers, // contains target
-closestElement([-77, -50, -2, -1, 5], -1);
+// closestElement([-77, -50, -2, -1, 5], -1);
 // Regular case: array of positive and negative numbers,
 // no target
 // closestElement([-1, 8],-8);
