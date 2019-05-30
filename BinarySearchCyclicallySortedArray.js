@@ -6,7 +6,7 @@ Given an array that is cyclically sorted, find the minimum element. A cyclically
 Q. How do you want the output returned?
 A. Return the index of the minimum item.
 
-Q.Can the array be rotated by 0 elements? i.e, be a normal sorted array?
+Q. Can the array be rotated by 0 elements? i.e, be a normal sorted array?
 
 A. Yes
 
@@ -43,12 +43,14 @@ Edge cases: empty array, null array, null, nothing passed in
 */
 
 const BinarySearchCyclicallySortedArray = (a) => {
+  if (!a || a.length < 1) return 'nothing passed in, try again';
   let right = a[a.length - 1];
   let start = 0;
   let end = a.length - 1;
   while (start <= end) {
     let mid = Math.ceil(start + (end-start)/2);
-  if (a[mid] <= right && (mid === 0 || a[mid] < a[mid-1]))   { 
+  if (a[mid] <= right && (mid === 0 || a[mid] < a[mid-1]))   {
+     // console.log(mid);
      return mid;
      } else if (mid > right)
        start = mid + 1;
@@ -57,3 +59,11 @@ const BinarySearchCyclicallySortedArray = (a) => {
 };
 
 BinarySearchCyclicallySortedArray([4,5,1,2,3]);
+// BinarySearchCyclicallySortedArray([1, 2, 3, 4, 5]);
+// BinarySearchCyclicallySortedArray([68]);
+// BinarySearchCyclicallySortedArray([77, 8]);
+// BinarySearchCyclicallySortedArray([909, 90909]);
+// BinarySearchCyclicallySortedArray(null);
+// BinarySearchCyclicallySortedArray([]);
+// BinarySearchCyclicallySortedArray(a = null);
+// BinarySearchCyclicallySortedArray();
