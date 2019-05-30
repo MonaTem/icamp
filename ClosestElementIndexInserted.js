@@ -37,7 +37,6 @@ const closestElementIndexInserted = (a, target) => {
            start = mid + 1;
            } else return mid;
   }
-  console.log(a[result]);
   if (a[result] < target) {
     return result+1;
   } else return result;
