@@ -2,7 +2,7 @@
 
 Find the target element in an array of unknown length.
 
-Solution: To find the array's length, start with index 1 and keep doubling it, until the element at the index is invalid and therefore throws an exception.
+Solution: To find the array's length, start with high of  1 and keep doubling it, until the element at the index is invalid and therefore throws an exception.
 
 So then we know that the value exists between high/2 (the last value of index before we doubled it) and the high point (the current value of the index which threw the exception).
 
@@ -58,7 +58,8 @@ Edge cases:  nothing passed in, aray null or undefined or empty, target null or 
 
 const binarySearchforLastIndex = (a, low, high) => {
   while (low <= high) {
-     let mid = Math.ceil(low + (high - low)/2);
+     let mid = Math.floor(low + (high - low)/2);
+     // console.log(`mid is ${mid}`);
      try {
       let temp = a[mid];
       if (!temp)
@@ -74,6 +75,7 @@ const binarySearchforLastIndex = (a, low, high) => {
         throw new Error("array index is out of bounds");
      }
      catch(error) { // mid + 1 is out of bounds.  mid is last index
+       // console.log("we are in mid+1 out of bounds");
        return mid;
      }
      low = mid + 1; //both mid and mid + 1 are in array,                   so mid  is not the last index
@@ -84,7 +86,8 @@ const binarySearchforLastIndex = (a, low, high) => {
 
 const binarySearchWithinRange = (a, target, low, high) => {
   while (low <= high) {
-     let mid = Math.ceil(low + (high - low)/2);
+     let mid = Math.floor(low + (high - low)/2);
+     console.log(`mid is now ${mid}`);
     if (a[mid] > target) {
       high = mid - 1;
     } else if (a[mid] < target) {
@@ -112,6 +115,13 @@ const findWithUnknownLength = (a, target) => {
     }
   high +=2;
   }
-  return binarySearchWithinRange(a, target, high/2, high);
+  // console.log(`low is  ${Math.floor(high/2)}`);
+  return binarySearchWithinRange(a, target, Math.floor(high/2), high);
 };
-findWithUnknownLength([-202, -101, 2, 4, 27, 31, 55, 237, 345, 2020, 6780, 52078], 2020);
+// findWithUnknownLength([-202, -101, 2, 4, 27, 31, 55, 237, 345, 2020, 6780, 52078], 2020);
+
+// findWithUnknownLength([-202, -101, 2, 4, 27, 31, 55, 237, 345, 2020, 6780, 52078], 2023);
+
+// findWithUnknownLength([-202], -202);
+
+findWithUnknownLength([-2078], -33);
