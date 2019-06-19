@@ -58,9 +58,9 @@ Edge cases:  nothing passed in, aray null or undefined or empty, target null or 
 */
 
 const binarySearchforLastIndex = (a, low, high) => {
-  console.log('binarySearchforLastIndex');
-  console.log(`low is ${low}`);
-  console.log(`high is ${high}`);
+  // console.log('binarySearchforLastIndex');
+  // console.log(`low is ${low}`);
+  // console.log(`high is ${high}`);
   while (low <= high) {
      let mid = Math.floor(low + (high - low)/2);
     //  console.log(`here mid is ${mid}`);
@@ -90,8 +90,9 @@ const binarySearchforLastIndex = (a, low, high) => {
 
 const binarySearchWithinRange = (a, target, low, high) => {
   // console.log(a, target, low, high);
-  while (low < high) {
+  while (low <= high) {
      let mid = Math.floor(low + (high - low)/2);
+    //  console.log('middle element is ', a[mid]);
     //  console.log(`mid is now ${mid}`);
     //  console.log`low and high are now ${low} ${high}`;
     //  if (a[mid] === target) return mid;
@@ -106,9 +107,18 @@ const binarySearchWithinRange = (a, target, low, high) => {
     //          }
     if (a[mid] > target) {
       high = mid - 1;
+      // console.log(`high is now ${high}`);
+      // console.log(`and low is ${low}`);
     } else if (a[mid] < target) {
            low = mid + 1;
-           } else return mid;
+          //  console.log(`low is now ${low}`);
+          //  console.log(`and high is ${high}`);
+           } else {
+            //  console.log(`mid is now ${mid}`);
+            //  console.log('middle element is ', a[mid]);
+            //  console.log('target is ', target);
+             return mid;
+             }
   }
   return -1;
 };
@@ -127,15 +137,16 @@ const findWithUnknownLength = (a, target) => {
     catch(error) {
       lastIndex =
       binarySearchforLastIndex(a, Math.floor(high/2),high);
+      // console.log(`last index is ${lastIndex}`);
       break;
     }
   high *=2;
-  console.log(high);
+  // console.log(high);
   }
   // console.log(`low is  ${Math.floor(high/2)}`);
-  return binarySearchWithinRange(a, target, Math.floor(high/2), high);
+  return binarySearchWithinRange(a, target, 0, lastIndex);
 };
-findWithUnknownLength([-202, -101, 2, 4, 27, 31, 55, 237, 345, 2020, 6780, 52078], 2020);
+// findWithUnknownLength([-202, -101, 2, 4, 27, 31, 55, 237, 345, 2020, 6780, 52078], 2020);
 
 // findWithUnknownLength([-202, -101, 2, 4, 27, 31, 55, 237, 345, 2020, 6780, 52078], 2023);
 
@@ -144,3 +155,21 @@ findWithUnknownLength([-202, -101, 2, 4, 27, 31, 55, 237, 345, 2020, 6780, 52078
 // findWithUnknownLength([-2078], -33);
 
 // findWithUnknownLength([-9999, 2780], -9999);
+
+// findWithUnknownLength([-278, 22], 22);
+
+// findWithUnknownLength([233, 6020], 67);
+
+// findWithUnknownLength();
+
+// findWithUnknownLength([], 3);
+
+// findWithUnknownLength(3);
+
+//  findWithUnknownLength(a = null, 4);
+
+// findWithUnknownLength([22, 55, 77]);
+
+// findWithUnknownLength([22, 33, 88], null);
+
+// findWithUnknownLength([22, 66], target = null);
