@@ -58,12 +58,10 @@ Edge cases:  nothing passed in, aray null or undefined or empty, target null or 
 */
 
 const binarySearchforLastIndex = (a, low, high) => {
-  // console.log('binarySearchforLastIndex');
-  // console.log(`low is ${low}`);
-  // console.log(`high is ${high}`);
+
   while (low <= high) {
      let mid = Math.floor(low + (high - low)/2);
-    //  console.log(`here mid is ${mid}`);
+
      try {
       let temp = a[mid];
       if (!temp)
@@ -79,7 +77,7 @@ const binarySearchforLastIndex = (a, low, high) => {
         throw new Error("array index is out of bounds");
      }
      catch(error) { // mid + 1 is out of bounds.  mid is last index
-      //  console.log("we are in mid+1 out of bounds");
+
        return mid;
      }
      low = mid + 1; //both mid and mid + 1 are in array,  so mid  is not the last index
@@ -89,34 +87,20 @@ const binarySearchforLastIndex = (a, low, high) => {
 
 
 const binarySearchWithinRange = (a, target, low, high) => {
-  // console.log(a, target, low, high);
+
   while (low <= high) {
      let mid = Math.floor(low + (high - low)/2);
-    //  console.log('middle element is ', a[mid]);
-    //  console.log(`mid is now ${mid}`);
-    //  console.log`low and high are now ${low} ${high}`;
-    //  if (a[mid] === target) return mid;
-    //  else if
-    //   high = mid - 1;
-    // } else if (a[mid] < target) {
-    //        low = mid + 1;
-    //        console.log(`new low is ${low}`);
-    //        } else {
-    //          console.log(`here we are!!!!`);
-    //          return mid;
-    //          }
+
+
     if (a[mid] > target) {
       high = mid - 1;
-      // console.log(`high is now ${high}`);
-      // console.log(`and low is ${low}`);
+
     } else if (a[mid] < target) {
            low = mid + 1;
-          //  console.log(`low is now ${low}`);
-          //  console.log(`and high is ${high}`);
+
            } else {
-            //  console.log(`mid is now ${mid}`);
-            //  console.log('middle element is ', a[mid]);
-            //  console.log('target is ', target);
+
+
              return mid;
              }
   }
@@ -137,13 +121,13 @@ const findWithUnknownLength = (a, target) => {
     catch(error) {
       lastIndex =
       binarySearchforLastIndex(a, Math.floor(high/2),high);
-      // console.log(`last index is ${lastIndex}`);
+
       break;
     }
   high *=2;
-  // console.log(high);
+
   }
-  // console.log(`low is  ${Math.floor(high/2)}`);
+
   return binarySearchWithinRange(a, target, 0, lastIndex);
 };
 // findWithUnknownLength([-202, -101, 2, 4, 27, 31, 55, 237, 345, 2020, 6780, 52078], 2020);
