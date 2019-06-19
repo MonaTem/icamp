@@ -58,9 +58,9 @@ Edge cases:  nothing passed in, aray null or undefined or empty, target null or 
 */
 
 const binarySearchforLastIndex = (a, low, high) => {
-  // console.log('binarySearchforLastIndex');
-  // console.log(`low is ${low}`);
-  // console.log(`high is ${high}`);
+  console.log('binarySearchforLastIndex');
+  console.log(`low is ${low}`);
+  console.log(`high is ${high}`);
   while (low <= high) {
      let mid = Math.floor(low + (high - low)/2);
     //  console.log(`here mid is ${mid}`);
@@ -129,7 +129,8 @@ const findWithUnknownLength = (a, target) => {
       binarySearchforLastIndex(a, Math.floor(high/2),high);
       break;
     }
-  high +=2;
+  high *=2;
+  console.log(high);
   }
   // console.log(`low is  ${Math.floor(high/2)}`);
   return binarySearchWithinRange(a, target, Math.floor(high/2), high);
@@ -141,3 +142,5 @@ findWithUnknownLength([-202, -101, 2, 4, 27, 31, 55, 237, 345, 2020, 6780, 52078
 // findWithUnknownLength([-202], -202);
 
 // findWithUnknownLength([-2078], -33);
+
+// findWithUnknownLength([-9999, 2780], -9999);
