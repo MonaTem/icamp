@@ -5,9 +5,9 @@ Find the target element in an array of unknown length.
 
 Solution: To find the array's length, start with high of 1 and keep doubling it until the index is invalid and therefore throws an exception.
 
-So then we know that the value exists between high/2 (the last value of index before we doubled it) and the high point (the current value of the index which threw the exception).
+So then we know that the last index exists between high/2 (the last value of index before we doubled it) and the high point (the current value of the index which threw the exception).
 
-We then do a binary search between these two points to find the target.
+We then do a binary search between index zero and the last index  to find the target.
 
 This performs in O(log n) time complexity.
 
@@ -42,7 +42,9 @@ high = 1;
 Multiply high by 2.
 keep checking until  a[i] is undefined (use a try/catch block to check this);
 
-Then...do a binary search for target in range defined by high = a[i] where undefined and low = high/2.
+Then...do a binary search for the last index in range defined by high = a[i] where undefined and low = high/2.
+
+Once the last index is found, do a binary search between index zero and the last index to find the target.
 
 If target found, return target
 Otherwise return -1
