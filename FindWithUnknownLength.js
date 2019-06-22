@@ -40,9 +40,9 @@ If array or target empty or null or nothing passed in, return -1.
 high = 1;
 
 Multiply high by 2.
-keep checking until  a[i] is undefined (use a try/catch block to check this);
+keep checking until  a[high] is undefined (use a try/catch block to check this);
 
-Then...do a binary search for the last index in range defined by high = a[i] where undefined and low = high/2.
+Then...do a binary search for the last index in range defined by high = a[high] where undefined and low = high/2.
 
 Once the last index is found, do a binary search between index zero and the last index to find the target.
 
