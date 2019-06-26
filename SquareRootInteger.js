@@ -1,4 +1,5 @@
 // Square root of positive integers using Binary Search
+// Time complexity O(log n)
 const SquareRootInteger = (X, ans=0) => {
   // base cases
   if (X === 0 || X === 1) return X;
