@@ -1,10 +1,10 @@
 // Square root of positive integers using Binary Search
 // Time complexity O(log n)
 const SquareRootInteger = (X, ans=0) => {
+   // edge cases
+  if (!X || X.length < 1) return ans;
   // base cases
   if (X === 0 || X === 1) return X;
-  // edge cases
-  if (!X || X.length < 1) return ans;
   low = 0;
   high = X/2;
   while (low <= high) {
