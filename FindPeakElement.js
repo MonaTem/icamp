@@ -1,4 +1,4 @@
-// Simpler version of SearchForPeak.  Not tested for as many cases.
+// Simpler version of SearchForPeak. No recursion. Not tested for as many cases.
 
 const FindPeakElement = (arr) => {
   if (arr === null || arr.length === 0) return -1;
