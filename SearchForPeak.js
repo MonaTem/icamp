@@ -25,18 +25,18 @@ A.  No.
 const SearchforPeak = (a, low, high) => {
   if (!a || a.length < 1 || low == undefined || high == undefined) return -1;
   let mid = Math.floor(low + (high - low)/2);
-  if ((mid === 0 && a[1] < a[0]) || (mid === 0 && a.length === 1) || (a[mid-1] < a[mid ] && a[mid+1] < a[mid]) || (mid > 0 && mid === high &&        a[mid-1] < a[mid])) {
+  if ((mid === 0 && a[1] < a[0]) || (mid === 0 && a.length === 1) || (a[mid-1] < a[mid ] && a[mid+1] < a[mid]) || (mid === high &&  a[mid-1] < a[mid])) {
     return a[mid];
   } else if (a[mid] < a[mid-1]) {
-    return SearchforPeak(a, low, mid-1);
+    return SearchforPeak(a, low, --mid);
     } else if (a[mid] < a[mid+1]) {
-        return SearchforPeak(a, mid+1, high);
+        return SearchforPeak(a, ++mid, high);
       }
 return -1;
 };
 // Regular cases:
-// SearchforPeak([1,3,4,5,2], 0, 4);
-SearchforPeak([1, 3, 20, 4, 1, 0], 0, 5);
+SearchforPeak([1,3,4,5,2], 0, 4);
+// SearchforPeak([1, 3, 20, 4, 1, 0], 0, 5);
 // SearchforPeak([3, 4, 6, 7, 8, 19, 22], 0, 6);
 // Corner cases:
 // SearchforPeak([5,3,1], 0, 2);
