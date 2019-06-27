@@ -23,7 +23,7 @@ A.  No.
 */
 
 const SearchforPeak = (a, low, high) => {
-  if (!a || a.length < 1 || low == undefined || low.length < 1 || high == undefined || high.length < 1) return -1;
+  if (!a || a.length < 1 || low == undefined || high == undefined) return -1; 
   let mid = Math.floor(low + (high - low)/2);
   if ((mid === 0 && a[1] < a[0]) || (a[mid-1] < a[mid ] && a[mid+1] < a[mid]) || (mid > 0 && mid === high &&[mid-1] < a[mid])) {
     return a[mid];
