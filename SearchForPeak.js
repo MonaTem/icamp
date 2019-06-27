@@ -43,3 +43,4 @@ SearchforPeak([1,3,4,5,2], 0, 4);
 // SearchforPeak([1,2,3]);
 // SearchforPeak([1, 2, 3], 0);
 // SearchforPeak([1, 2, 3], 0, 4);
+// SearchforPeak([], 0, 0);
