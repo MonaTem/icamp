@@ -6,6 +6,6 @@ const FibonacciWithMemo = (n, map) =>
              + FibonacciWithMemo(n-2, map);
   map.set(n, result);
   return result;
-}
-var map = new Map();
+};
+let map = new Map();
 FibonacciWithMemo(20, map);
