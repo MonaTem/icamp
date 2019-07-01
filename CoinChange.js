@@ -80,5 +80,15 @@ const CoinChange = (coins, target) => {
 
 };
 
+// Regular cases:
 // CoinChange([1, 2, 5], 5);
 CoinChange([1, 2, 3, 4], 10);
+
+// Edge cases:
+// CoinChange([], 8);
+// CoinChange();
+// CoinChange(8)
+// CoinChange([1,2],-889);
+
+// Base case:
+// CoinChange([2],4);
