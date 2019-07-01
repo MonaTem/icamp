@@ -24,7 +24,7 @@ CoinChange.
 
 If target or coins not entered or undefined or target negative, return without processing.
 
-Otherwis invoked PrintCoins to do most of the heavy lifiting.
+Otherwise invoke PrintCoins to do most of the heavy lifting.
 
 In PrintCoins:
 
@@ -49,10 +49,9 @@ Regular cases:  target equal to a coin, target greater than all coins
 Base cases: 1 coin in array
 Edge cases: coin array empty or null, target negative or 0
 
-
 */
 
-const PrintCoins = (coins, target, startindex, buffer, sum)=> {
+const PrintCoins = (coins, target, startindex, buffer, sum) => {
 
  if (sum > target) return;
 
@@ -62,16 +61,19 @@ const PrintCoins = (coins, target, startindex, buffer, sum)=> {
  }
 
  for (let i = startindex; i < coins.length; i++) {
+  //  console.log(`i is ${i}`);
    buffer.push(coins[i]);
    PrintCoins(coins, target, i, buffer, sum + coins[i]);
    buffer.pop();
+  //  console.log(`after pop ${buffer}`);
  }
 
 };
 
 const CoinChange = (coins, target) => {
 
-  if (!coins || coins.length <= 0 || target === undefined)
+  if (!coins || coins.length <= 0 ||
+      target == undefined || target <= 0)
      return;
 
   let buffer = [];
@@ -89,6 +91,7 @@ CoinChange([1, 2, 3, 4], 10);
 // CoinChange();
 // CoinChange(8)
 // CoinChange([1,2],-889);
+// CoinChange([2, 334]);
 
 // Base case:
 // CoinChange([2],4);
