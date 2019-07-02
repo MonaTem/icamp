@@ -73,7 +73,7 @@ const PrintCoins = (coins, target, startindex, buffer, sum) => {
 const CoinChange = (coins, target) => {
 
   if (!coins || coins.length <= 0 ||
-      target == undefined || target <= 0)
+      target === undefined || target <= 0)
      return;
 
   let buffer = [];
