@@ -36,6 +36,37 @@ Nothing passed in, a is empty or undefined, X is undefined or negative, X is 0, 
 
 */
 
+const PrintCombosHelper = (a, buffer, startIndex, bufferIndex) => {
+
+  // termination cases: buffer full, startindex out of bounds
+
+  // if (bufferIndex === buffer.length && startIndex === a.length) {
+  //   bufferIndex = 0;
+  //   startIndex =
+  // }
+
+  if (bufferIndex === buffer.length) {
+    console.log(buffer);
+    // console.log(`buffer index is ${bufferIndex}`);
+    // console.log(`start index is ${startIndex}`);
+    return;
+  }
+
+  if (startIndex === a.length) {
+    // console.log('start index is ', startIndex);
+    return;
+  }
+  // find candidates to place into buffer
+
+  for (let i = startIndex; i < a.length; i++) {
+    buffer[bufferIndex] = (a[i]);
+
+  // recurse to next buffer index
+  PrintCombosHelper(a, buffer, i+1,  bufferIndex+1);
+  }
+
+};
+
 const PrintCombos = (a, X) => {
 
   if (!a || a.length <= 0 || X === undefined || X <= 0) return;
@@ -46,26 +77,8 @@ const PrintCombos = (a, X) => {
 
 };
 
-const PrintCombosHelper = (a, startIndex, buffer, bufferIndex) => {
 
-  // termination cases: buffer full, startindex out of bounds
 
-  if (bufferIndex === buffer.length) {
-    console.log(buffer);
-    return;
-  }
-
-  if (startIndex === a.length) return;
-
-  // find candidates to place into buffer
-
-  for (i = startIndex; i < a.length; i++) {
-    buffer[bufferIndex] = (a[i]);
-
-  // recurse to next buffer index
-  PrintCombosHelper(a, buffer, i+1,  bufferIndex+1);
-  }
-
-};
-
-PrintCombos([1, 2, 3, 4, 5, 6], 3);
+// PrintCombos([1, 2, 3, 4, 5, 6], 3);
+// PrintCombos([2,3,4,5],3);
+PrintCombos([1,2,3,4,5,6,7],3);
