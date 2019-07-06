@@ -77,8 +77,35 @@ const PrintCombos = (a, X) => {
 
 };
 
-
-
+// Test cases
+// Regular cases:
+// X less than a.length
 // PrintCombos([1, 2, 3, 4, 5, 6], 3);
 // PrintCombos([2,3,4,5],3);
 PrintCombos([1,2,3,4,5,6,7],3);
+// X Equal to a.length
+// PrintCombos([1,2,3,4,5,6,7],7);
+//
+// Base cases
+// X is 1
+// PrintCombos([1,2,3],1);
+// a is size 1
+// PrintCombos([22],1);
+// a is size 2
+// PrintCombos([11, 37], 1);
+//
+// Edge cases:
+// Nothing passed in:
+// PrintCombos();
+// a is empty
+// PrintCombos([], 2);
+// a is undefined
+// PrintCombos(7);
+// X is undefined
+// PrintCombos([22, 44, 55]);
+// X is negative
+//PrintCombos([22,45], -8);
+// X is zero
+//PrintCombos([22,45,67],0);
+// X greater than array length
+// PrintCombos([1,2,3,4,5,6,7], 23);
