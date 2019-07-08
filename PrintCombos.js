@@ -40,20 +40,13 @@ const PrintCombosHelper = (a, buffer, startIndex, bufferIndex) => {
 
   // termination cases: buffer full, startindex out of bounds
 
-  // if (bufferIndex === buffer.length && startIndex === a.length) {
-  //   bufferIndex = 0;
-  //   startIndex =
-  // }
 
   if (bufferIndex === buffer.length) {
     console.log(buffer);
-    // console.log(`buffer index is ${bufferIndex}`);
-    // console.log(`start index is ${startIndex}`);
     return;
   }
 
   if (startIndex === a.length) {
-    // console.log('start index is ', startIndex);
     return;
   }
   // find candidates to place into buffer
