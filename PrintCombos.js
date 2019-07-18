@@ -18,7 +18,6 @@ There will be a driver function PrintCombos, and a recursive helper function, Pr
 
 If the buffer is full, then the helper function prints the contents of the buffer.  Otherwise, the helper function finds candidates for the buffer.
 
-Once the start index equals the array's length (that is, it's out of bounds), we are done.
 
 Test cases:
 
