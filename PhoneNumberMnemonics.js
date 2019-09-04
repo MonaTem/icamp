@@ -20,7 +20,7 @@ There will be two functions, a PrintWords function to kick things off and set up
 
 The PrintWordsHelper function will search for candidates for the buffer (using a for loop) and use recursion to go to the next buffer index once a candidate is found.
 
-It will print the buffer once it is full (i.e., equal to the length of the phone number.)
+It will print the buffer once it is full (i.e., equal to the length of the phone number minus any ones or zeroes.)
 
 Test cases:
 
