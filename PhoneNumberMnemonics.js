@@ -16,11 +16,19 @@ A.  Print nothing.
 
 Pseudo code:
 
-There will be two functions, a PrintWords function to kick things off and set up the buffer, and a recursive PrintWordsHelper function to do most of the actual work.
+There will be three functions.  The main function will be a PrintWords function to kick things off and set up the buffer.
+
+There will be a recursive PrintWordsHelper function to do most of the actual work.
 
 The PrintWordsHelper function will search for candidates for the buffer (using a for loop) and use recursion to go to the next buffer index once a candidate is found.
 
 It will print the buffer once it is full (i.e., equal to the length of the phone number minus any ones or zeroes.)
+
+There will be another helper function, getLetters, which will retrieve the letters associated with each digit of the phone number.
+
+Time complexity: exponential complexity.  O(2^N)
+
+Space complexity:  O(N) where N is the size of the phone number. O(N) space is taken by both the buffer and the call stack.
 
 Test cases:
 
@@ -30,9 +38,6 @@ Base cases:  phone number has 1 digit, phone number has only 1s and 0s
 
 Edge cases: phone number empty or null
 
-Time complexity: exponential complexity.  O(2^N)
-
-Space complexity:  O(N) where N is the size of the phone number. O(N) space is taken by both the buffer and the call stack.
 
 */
 
