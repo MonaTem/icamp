@@ -1,7 +1,7 @@
 /* Problem description.
 
 Given a phone number of any length, print all possible
-alphabetic strings that can be created from that phne number.  Since 0 and 1 correspond to no letters, ignore them.
+alphabetic strings that can be created from that phone number.  Since 0 and 1 correspond to no letters, ignore them.
 
 Questions and answers:
 
