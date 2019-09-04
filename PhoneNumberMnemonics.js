@@ -53,7 +53,6 @@ const getLetters = (digit) => {
 
 };
 
-// const toIntArray = (a) => ([...a + ""].map(Number));
 
 const PrintWordsHelper = (a, buffer, aIndex, bufferIndex) => {
 
@@ -63,7 +62,6 @@ const PrintWordsHelper = (a, buffer, aIndex, bufferIndex) => {
      return;
    }
 
-  // let arr = toIntArray(a);
 
    let letters = getLetters(a[aIndex]);
 
