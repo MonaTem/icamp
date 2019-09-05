@@ -53,8 +53,8 @@ const PrintCombosHelper = (a, buffer, startIndex, bufferIndex) => {
   for (let i = startIndex; i < a.length; i++) {
     buffer[bufferIndex] = (a[i]);
 
-  // recurse to next buffer index
-  PrintCombosHelper(a, buffer, i+1,  bufferIndex+1);
+    // recurse to next buffer index
+    PrintCombosHelper(a, buffer, i+1,  bufferIndex+1);
   }
 
 };
