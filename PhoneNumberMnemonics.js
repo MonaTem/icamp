@@ -83,8 +83,10 @@ const PrintWordsHelper = (a, buffer, aIndex, bufferIndex) => {
    }
 };
 
-const PrintWords = (phoneNumber) => {
-  if (!phoneNumber) return;
+const PrintWords = (phoneNum) => {
+  if (!phoneNum) return;
+
+  let phoneNumber = phoneNum.toString();
 
   let N = phoneNumber.length;
 
