@@ -85,5 +85,15 @@ const printSubsets = (a) => {
   printSubsetsHelper(a, buffer, 0, 0);
 
 };
-
+// Regular cases:
 printSubsets([1, 2, 3]);
+// printSubsets([4,6,77,909]);
+
+// Base cases:
+
+// printSubsets([512]);
+// printSubsets([2, 403]);
+
+// Edge cases:
+// printSubsets();
+// printSubsets(null);
