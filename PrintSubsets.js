@@ -10,7 +10,8 @@ A.  Yes
 Q.  Will the input have any duplicates?
 A.  No
 
-Q.  If the input is an empty array, do we print the empty array as its subset?
+Q.  If the input is an empty array, do we print the empty
+    array as its subset?
 A.  Yes
 
 Q.  If the input is empty, do we print anything?
@@ -39,6 +40,9 @@ startIndex out of bounds: return
 for i: startIndex to a.length - 1
 place a[i] into buffer(bufferIndex)
 printSubsetsHelper(a, buffer, aIndex+1, bufferIndex+1)
+
+Also there will be another helper function printArray.
+This mimics the PrintArray in Java and will print the array regardless of its length (the array length varies)
 
 Test:
 
