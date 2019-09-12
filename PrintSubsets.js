@@ -42,7 +42,7 @@ place a[i] into buffer(bufferIndex)
 printSubsetsHelper(a, buffer, aIndex+1, bufferIndex+1)
 
 Also there will be another helper function printArray.
-This mimics the PrintArray in Java and will print the array regardless of its length (the array length varies)
+This mimics the PrintArray in Java and will print the array regardless of its length (the array length varies).
 
 Test:
 
@@ -67,6 +67,8 @@ const printSubsetsHelper =
   if (bufferIndex === buffer.length)
     return;
 
+  // startIndex out of bounds--return
+
   if (startIndex === a.length) {
     return;
   }
@@ -90,7 +92,7 @@ const printSubsets = (a) => {
 
 };
 // Regular cases:
-printSubsets([1, 2, 3]);
+// printSubsets([1, 2, 3]);
 // printSubsets([4,6,77,909]);
 
 // Base cases:
