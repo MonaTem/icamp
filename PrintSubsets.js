@@ -101,3 +101,4 @@ printSubsets([1, 2, 3]);
 // Edge cases:
 // printSubsets();
 // printSubsets(null);
+// printSubsets([]);
