@@ -48,3 +48,34 @@
    Space complexity: O(X) for both buffer allocation and recursion stack
 
 */
+
+const printPermsHelper = (a, buffer, bufferIndex, isInBuffer) => {
+
+  if (bufferIndex === buffer.length) {
+    console.log(buffer);
+    return;
+  }
+
+  for (i = 0; i < a.length; i++) {
+    if (isInBuffer[i] === false) {
+      buffer[bufferIndex] = a[i];
+      isInBuffer[i] = true;
+    }
+    printPermsHelper(a, buffer, bufferIndex+1, isInBuffer);
+
+    isInBuffer[i] = false;
+
+  }
+
+
+};
+
+const printPerms = (a, x) => {
+      if (!a || !x) return;
+      if (x > a.length) return;
+      let buffer = new Array(x);
+      let isInBuffer = new Array(a.length);
+      printPermsHelper(a, buffer, 0, isInBuffer);
+};
+
+printPerms([1,2,3], 3);
