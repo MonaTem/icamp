@@ -39,7 +39,7 @@ startIndex out of bounds: return
 
 for i: startIndex to a.length - 1
 place a[i] into buffer(bufferIndex)
-printSubsetsHelper(a, buffer, aIndex+1, bufferIndex+1)
+printSubsetsHelper(a, buffer, i+1, bufferIndex+1)
 
 Also there will be another helper function printArray.
 This mimics the PrintArray in Java and will print the array regardless of its length (the array length varies).
