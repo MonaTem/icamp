@@ -44,7 +44,7 @@ printSubsetsHelper(a, buffer, aIndex+1, bufferIndex+1)
 Also there will be another helper function printArray.
 This mimics the PrintArray in Java and will print the array regardless of its length (the array length varies).
 
-Test:
+Test cases:
 
 Edge cases: a empty or null
 Base cases: a size 1 or 2
