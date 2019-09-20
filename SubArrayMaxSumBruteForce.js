@@ -52,19 +52,52 @@ Regular cases: Mixed neg and pos, all neg, all pos, all 0s
 
 const subArrayMaxSumBruteForce = (a) => {
 
-  if (!a) throw new Error("Input is empty or null");
+  if (!a || a.length === 0)
+     throw new Error("Input is empty or null");
 
-  let maxSum = 0;
+  let maxSum = a[0];
 
   for (let i = 0; i < a.length; i++){
     sum = 0;
-    for (j = 0; j < a.length; j++) {
+    // console.log(i);
+    for (j = i; j < a.length; j++) {
       sum = sum + a[j];
-      if (sum > maxSum) maxSum = sum;
+      // console.log(sum);
+
+      switch (true) {
+         case (sum > 0):
+           maxSum = Math.max(maxSum, sum);
+           break;
+         case (sum < 0 && maxSum === 0):
+           maxSum = sum;
+           break;
+         case (sum < 0 && maxSum !== 0 && sum > maxSum):
+           maxSum = sum;
+           break;
+      }
     }
+    // sum = 0;
   }
 return maxSum;
 };
 
-// subArrayMaxSumBruteForce([1,2,-1,2,-3,2,-5]);
-subArrayMaxSumBruteForce();
+// Regular cases:
+subArrayMaxSumBruteForce([1,2,-1,2,-3,2,-5]);
+// subArrayMaxSumBruteForce([0, 0, 0, 0, 0, 0]);
+// subArrayMaxSumBruteForce([1, 5, 4, 3, 7, 8, 91, 2]);
+// subArrayMaxSumBruteForce([-3, -55, -666, -2])
+
+// Edge cases:
+// subArrayMaxSumBruteForce();
+// subArrayMaxSumBruteForce([]);
+// subArrayMaxSumBruteForce(null);
+
+// Base cases:
+  //  subArrayMaxSumBruteForce([11]);
+  // subArrayMaxSumBruteForce([-203]);
+  // subArrayMaxSumBruteForce([0]);
+  // subArrayMaxSumBruteForce([-44, 2]);
+  // subArrayMaxSumBruteForce([2, -44]);
+  // subArrayMaxSumBruteForce([0, 0]);
+  // subArrayMaxSumBruteForce([3, 99]);
+  // subArrayMaxSumBruteForce([-55, -17]);
