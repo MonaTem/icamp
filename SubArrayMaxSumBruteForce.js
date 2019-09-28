@@ -62,24 +62,17 @@ const subArrayMaxSumBruteForce = (a) => {
     // console.log(i);
     for (j = i; j < a.length; j++) {
       sum = sum + a[j];
-      // console.log(sum);
 
-      switch (true) {
-         case (sum > 0 || (sum < 0 && maxSum !== 0)):
-           maxSum = Math.max(maxSum, sum);
-           break;
-         case (sum < 0 && maxSum === 0):
-           maxSum = sum;
-           break; 
-      }
-    }
-    // sum = 0;
+      if (sum < 0 && maxSum === 0) {
+        maxSum = sum;
+      } else maxSum = Math.max(maxSum, sum);
+    } 
   }
 return maxSum;
 };
 
 // Regular cases:
-// subArrayMaxSumBruteForce([1,2,-1,2,-3,2,-5]);
+subArrayMaxSumBruteForce([1,2,-1,2,-3,2,-5]);
 // subArrayMaxSumBruteForce([0, 0, 0, 0, 0, 0]);
 // subArrayMaxSumBruteForce([1, 5, 4, 3, 7, 8, 91, 2]);
 // subArrayMaxSumBruteForce([-3, -55, -666, -2]);
