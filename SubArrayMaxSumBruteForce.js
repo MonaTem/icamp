@@ -60,13 +60,13 @@ const subArrayMaxSumBruteForce = (a) => {
   for (let i = 0; i < a.length; i++){
     sum = 0;
     // console.log(i);
-    for (j = i; j < a.length; j++) {
+    for (let j = i; j < a.length; j++) {
       sum = sum + a[j];
 
       if (sum < 0 && maxSum === 0) {
         maxSum = sum;
       } else maxSum = Math.max(maxSum, sum);
-    } 
+    }
   }
 return maxSum;
 };
