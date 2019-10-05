@@ -16,6 +16,9 @@ A. No.
 Q. If input empty or null what to do?
 A. Throw an exception.
 
+Q. Must elements in the array be in sorted order?
+A. No.
+
 
 Solution:
 
