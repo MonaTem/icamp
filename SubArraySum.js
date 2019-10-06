@@ -44,7 +44,7 @@ let start = 0;
 let end = 0;
 let sum = a[0];
 
-while (start < a.length) {
+while (start < a.length && end < a.length) {
 
   if (start > end) // start inched forward; bring end back to start
   {  end = start;
@@ -63,4 +63,25 @@ return null;
 
 };
 
-SubArraySum([1,2,3,5,2],8);
+
+// Test cases:
+//
+// Regular cases:
+
+// SubArraySum([1,2,3,5,2],8);
+// SubArraySum([1, 2, 3, 5, 2], 1771);
+// SubArraySum([4, 5], 9);
+// SubArraySum([99, 2], 99);
+// SubArraySum([201, 2033], 2033);
+SubArraySum([66, 10], 76);
+//
+// Edge cases:
+//  SubArraySum();
+// SubArraySum(null);
+// SubArraySum([], 3);
+//
+// Base cases:
+
+// SubArraySum([8], 8);
+// SubArraySum([7], 8);
+// SubArraySum([166], 92);
