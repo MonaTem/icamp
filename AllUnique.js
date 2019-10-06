@@ -54,6 +54,9 @@ const AllUnique = (input) => {
 
   let dupsMap = new Map();
 
+  // initialize dupsMap
+  dupsMap.set(input.charAt(0), 0);
+
   let result = {start: 0, end: 0};
 
   let start = 0;
@@ -62,9 +65,7 @@ const AllUnique = (input) => {
 
   let longest = 0;
 
-  // result.end = 1;
 
-  // console.log(result);
 
   while (end < input.length) {
     let toAdd = input.charAt(end);
@@ -87,8 +88,8 @@ const AllUnique = (input) => {
 // Test cases:
 
 // Regular cases:
-// AllUnique('whatwhywhere');
-AllUnique('whatwhenwhy');
+AllUnique('whatwhywhere');
+// AllUnique('whatwhenwhy');
 // AllUnique('supercal');
 
 // Edge cases:
