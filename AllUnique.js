@@ -95,6 +95,7 @@ AllUnique('whatwhywhere');
 // Edge cases:
 // AllUnique();
 // AllUnique('');
+// AllUnique(null);
 
 // Base case:
 
