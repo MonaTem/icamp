@@ -6,7 +6,7 @@ Questions to clarify:
 Q.  What to return?
 A.  Return the start and end indices of the subarray
 
-Q.  What if multiple subarrays sum to X?
+Q.  What if multiple subarrays sum to target?
 A.  Return any one
 
 Q.  What if no subarrays found?
@@ -25,7 +25,7 @@ Use a start and end pointer.  Keep track of sum of subarray[start, end]
 
 If sum < target, add 1 to end, add a[end] to sum
 
-If sum > target, add 1 to start, subtract a[start -1 ] from sum
+If sum > target, add 1 to start, subtract a[start -1] from sum
 
 start must always be less than or equal to end
 
