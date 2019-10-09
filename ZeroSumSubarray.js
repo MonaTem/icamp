@@ -18,7 +18,7 @@ Solution:
 
 The brute force solution (nested loop) will have a time complexity of O(n^2) and space complexity of O(1).
 
-The solutions using the prefix sum (cum sum) technique will have a time complexit of O(n) and O(n) space.  So better time, but takes up more space (because we store the sums in a map)
+The solutions using the prefix sum (cumulative sum) technique will have a time complexit of O(n) and O(n) space.  So better time, but takes up more space (because we store the sums in a map)
 
 Calculate sum s[i] is zero, then a[0] through a[i] is the answer, so return 0, 1;
 
