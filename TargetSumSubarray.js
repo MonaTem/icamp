@@ -96,3 +96,4 @@ TargetSumSubarray([-345, 27, 888, 666, -97, 302], 205);
 
 // TargetSumSubarray([]);
 // TargetSumSubarray(null);
+// TargetSumSubarray([-2, 2]);
