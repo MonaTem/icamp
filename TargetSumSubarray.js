@@ -25,7 +25,7 @@ so return 0, i;
 
 If no such sum exists, then see if there is a duplicate of sum - target already in our map.
 
-If so, , then the (index of sum - target) + 1 is our start index.
+If so,  then the (index of sum - target) + 1 is our start index.
 
 Test cases:
 
