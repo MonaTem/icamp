@@ -20,7 +20,8 @@ The brute force solution (nested loop) will have a time complexity of O(n^2) and
 
 The solutions using the prefix sum (cumulative sum) technique will have a time complexity of O(n) and O(n) space.  So better time, but takes up more space (because we store the sums in a map)
 
-Calculate sum s[i] (sum of the entire subarray so far, starting from index zero).  If sum is target, then a[0] through a[i] is the answer, so return 0, 1;
+Calculate sum s[i] (sum of the entire subarray so far, starting from index zero).  If sum is target, then a[0] through a[i] is the answer,
+so return 0, i;
 
 If no such sum exists, then see if there is a duplicate sum already in our map.
 
