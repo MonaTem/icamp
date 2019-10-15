@@ -8,7 +8,7 @@ A.  Return the begin and end indices of the subarray we found
 Q.  What to return if no subarray found?
 A.  Return null
 
-Q.  What to return if input null, undefined, or empty?
+Q.  What to return if input null, undefined, or empty (including target)?
 A.  Return null
 
 Q.  What if there are multiple subarrays that meet the condition?
