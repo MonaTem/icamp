@@ -23,9 +23,9 @@ The solutions using the prefix sum (cumulative sum) technique will have a time c
 Calculate sum s[i] (sum of the entire subarray so far, starting from index zero).  If sum is target, then a[0] through a[i] is the answer,
 so return 0, i;
 
-If no such sum exists, then see if there is a duplicate sum already in our map.
+If no such sum exists, then see if there is a duplicate of sum - target already in our map.
 
-If so, for any j and k, then sum[j+1]..sum[k] is our answer.
+If so, , then the (index of sum - target) + 1 is our start index.
 
 Test cases:
 
