@@ -79,7 +79,6 @@ return i < 0 || i >= a.length || j < 0 || j >= a[0].length;
 
 
 const PathExists = (a, i, j, State) => {
-
   // out of bounds
   //
   if (Oob(a, i, j) || a[i][j] == 1) {
@@ -143,12 +142,15 @@ const Maze = (a) => {
     return false;
   }
 
-  if (a[0].length === 0 && a[0] === 1) {
-    console.log('NO_PATH_FOUND');
-    return false;
-  } else {console.log('PATH_FOUND');
-          return true;
-         }
+  if (a[0].length === 1 || a[0].length === undefined) {
+    if (a[0] == 1) {
+      console.log('NO_PATH_FOUND');
+      return false
+    } else {
+      console.log('PATH_FOUND');
+      return true;
+      }
+  }
 
   let arrlen = a.length
   let nextdim = a[0].length;
@@ -169,8 +171,19 @@ const Maze = (a) => {
 // Maze([0]);
 // Maze([1]);
 
-// Regular cases
+// Base cases
+// Maze([0, 1]);
+// Maze([[0], [0]]);
+// Maze([[0], [1]]);
+// Maze([[1], [0]]);
 
+
+// Regular cases
+// Rectangular matrix
 // Maze([[0, 1], [0, 0], [1, 0], [0, 0]]);
+// Square matrix
 // Maze([[0,1,1,1], [0,1,1,1], [0,0,0,0], [1,1,1,0]]);
+// Rectangular
 // Maze([[0,1], [1, 1], [1, 1]]);
+// Maze([0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]);
+// Maze([1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]);
