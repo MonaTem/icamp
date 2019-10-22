@@ -143,6 +143,13 @@ const Maze = (a) => {
     return false;
   }
 
+  if (a[0].length === 0 && a[0] === 1) {
+    console.log('NO_PATH_FOUND');
+    return false;
+  } else {console.log('PATH_FOUND');
+          return true;
+         }
+
   let arrlen = a.length
   let nextdim = a[0].length;
 
@@ -152,7 +159,18 @@ const Maze = (a) => {
 
  };
 
+// Test cases
 
-Maze([[0, 1], [0, 0], [1, 0], [0, 0]]);
+// Edge cases
+
+// Maze();
+// Maze([]);
+// Maze(null);
+// Maze([0]);
+// Maze([1]);
+
+// Regular cases
+
+// Maze([[0, 1], [0, 0], [1, 0], [0, 0]]);
 // Maze([[0,1,1,1], [0,1,1,1], [0,0,0,0], [1,1,1,0]]);
 // Maze([[0,1], [1, 1], [1, 1]]);
