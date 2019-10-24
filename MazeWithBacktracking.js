@@ -52,9 +52,9 @@ Converge/collect: if any of the checks returns true, return true
 
 Test cases:
 
-Edge cases: maxtrix empty or null, 1 element (0 or 1)
-Base cases: maxtrix w 1 row/column (same as second edge case above)
-Regular cases: maxtrix with/without path to end, maxtrix with all 0s (paths), with all 1s (walls), square matrix, rectangular matrix
+Edge cases: matrix empty or null, 1 element (0 or 1)
+Base cases: matrix w 1 row/column (same as second edge case above)
+Regular cases: matrix with/without path to end, matrix with all 0s (paths), with all 1s (walls), square matrix, rectangular matrix
 
 Time complexity:
 
