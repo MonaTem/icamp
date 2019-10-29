@@ -155,7 +155,7 @@ const Maze = (a) => {
   let arrlen = a.length
   let nextdim = a[0].length;
 
-  const State = a.map(() => Array(nextdim).fill('UNVISITED'));
+  var State = a.map(() => Array(nextdim).fill('UNVISITED'));
 
   PathExists(a, 0, 0, State);
 
