@@ -32,7 +32,7 @@ We will use recursion, memoization, and backtracking.
 
 If we hit a wall, we backtrack..that is, if we hit a wall we go back and try another path
 
-For each element a[i][j] we try all 4 directions, that is, up,down, left, and right.
+For each element a[i][j] we try all 4 directions, that is, up, down, left, and right.
 
 We look for a path.
 
@@ -53,7 +53,7 @@ Converge/collect: if any of the checks returns true, return true
 Test cases:
 
 Edge cases: matrix empty or null, 1 element (0 or 1)
-Base cases: matrix w 1 row/column 
+Base cases: matrix w 1 row/column
 Regular cases: matrix with/without path to end, matrix with all 0s (paths), with all 1s (walls), square matrix, rectangular matrix
 
 Time complexity:
