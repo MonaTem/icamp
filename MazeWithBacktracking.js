@@ -52,8 +52,8 @@ Converge/collect: if any of the checks returns true, return true
 
 Test cases:
 
-Edge cases: matrix empty or null, 1 element (0 or 1)
-Base cases: matrix w 1 row/column
+Edge cases: maxtrix empty or null, 1 element (0 or 1)
+Base cases: maxtrix w 1 row/column
 Regular cases: matrix with/without path to end, matrix with all 0s (paths), with all 1s (walls), square matrix, rectangular matrix
 
 Time complexity:
@@ -185,5 +185,7 @@ const Maze = (a) => {
 // Maze([[0,1,1,1], [0,1,1,1], [0,0,0,0], [1,1,1,0]]);
 // Rectangular
 // Maze([[0,1], [1, 1], [1, 1]]);
+// All zeroes
 // Maze([0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]);
+// All ones
 // Maze([1, 1, 1, 1, 1], [1, 1, 1, 1, 1], [1, 1, 1, 1, 1]);
