@@ -16,7 +16,7 @@ Questions to Clarify:
 Q. What to return?
 A. Return true if there's a path to the end; false otherwise
 
-Q. What to return in the input array is empty or null?
+Q. What to return if the input array is empty or null?
 A. Return false because there is no path
 
 Q. Does the ending element have to be a path?
