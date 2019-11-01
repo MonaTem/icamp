@@ -79,7 +79,7 @@ return i < 0 || i >= a.length || j < 0 || j >= a[0].length;
 
 
 const PathExists = (a, i, j, State) => {
-  // out of bounds
+  // out of bounds or wall
   //
   if (Oob(a, i, j) || a[i][j] == 1) {
       var oob = true;
