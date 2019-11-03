@@ -78,7 +78,7 @@ return i < 0 || i >= a.length || j < 0 || j >= a[0].length;
 };
 
 
-const PathExists = (a, i, j, State) => {
+const PathExists = (a, i, j, STATE, Memo) => {
   // out of bounds or wall
   //
   if (Oob(a, i, j) || a[i][j] == 1) {
@@ -89,20 +89,22 @@ const PathExists = (a, i, j, State) => {
   // end of maze
 
     if (i === a.length - 1 && j === a[0].length - 1) {
-      State[i][j] = 'PATH_FOUND';
-      console.log(State[i][j]);
+      Memo[i][j] = STATE.PATH_FOUND;
+      console.log(Memo[i][j]);
       return true;
     }
 
 
   // no path found or visiting
-  if (State[i][j] === 'NO_PATH_FOUND' || State[i][j] === 'VISITING') {
-    if (State[i][j] === 'NO_PATH_FOUND')
-       console.log(State[i][j]);
+  // console.log(Memo[i][j], ' here ', i, j);
+  if (Memo[i][j] === STATE.NO_PATH_FOUND || Memo[i][j] === STATE.VISITING) {
+    if (Memo[i][j] ===  STATE.NO_PATH_FOUND) {
+       console.log(Memo[i][j]);
+    }
     return false;
   }
 
-  State[i][j] = 'VISITING';
+  Memo[i][j] = STATE.VISITING;
 
   let Points = [
     [i+1, j],
@@ -114,40 +116,47 @@ const PathExists = (a, i, j, State) => {
 
   for (let i = 0; i < Points.length; i++) {
 
-      if (oob) {
-        console.log(NO_PATH_FOUND);
+    if (oob) {
+        console.log(STATE.NO_PATH_FOUND);
         return false;
     }
 
     let firstPoint = Points[i][0];
     let secondPoint = Points[i][1];
 
-    if (PathExists(a, firstPoint, secondPoint, State)) {
+   if (PathExists(a, firstPoint, secondPoint, STATE, Memo)) {
          return true;
     }
 
   }
 
-State[i][j] = 'NO_PATH_FOUND';
-console.log(State[i][j]);
+Memo[i][j] = STATE.NO_PATH_FOUND;
+console.log(Memo[i][j]);
 return false;
-
 };
 
 
 const Maze = (a) => {
 
+  const STATE = {
+    UNVISITED:     'UNVISITED',
+    VISITING:      'VISITING',
+    NO_PATH_FOUND: 'NO_PATH_FOUND',
+    PATH_FOUND:    'PATH_FOUND'
+  }
+
+
   if (!a || a.length === 0) {
-    console.log('NO_PATH_FOUND');
+    console.log(STATE.NO_PATH_FOUND);
     return false;
   }
 
   if (a[0].length === 1 || a[0].length === undefined) {
     if (a[0] == 1) {
-      console.log('NO_PATH_FOUND');
+      console.log(STATE.NO_PATH_FOUND);
       return false
     } else {
-      console.log('PATH_FOUND');
+      console.log(STATE.PATH_FOUND);
       return true;
       }
   }
@@ -155,9 +164,10 @@ const Maze = (a) => {
   let arrlen = a.length
   let nextdim = a[0].length;
 
-  var State = a.map(() => Array(nextdim).fill('UNVISITED'));
 
-  PathExists(a, 0, 0, State);
+  let Memo = a.map(() => Array(nextdim).fill(STATE.UNVISITED));
+
+  PathExists(a, 0, 0, STATE, Memo);
 
  };
 
@@ -183,6 +193,13 @@ const Maze = (a) => {
 // Maze([[0, 1], [0, 0], [1, 0], [0, 0]]);
 // Square matrix
 // Maze([[0,1,1,1], [0,1,1,1], [0,0,0,0], [1,1,1,0]]);
+// Square, path
+// Maze ([[0,1,1,0], [0,0,0,0], [0,0,1,0], [1,1,1,0]]);
+// Square, no path
+Maze([[0,1,1,0], [0,0,0,0], [1,1,1,1], [0,0,0,0]]);
+// Square, no path
+// Maze([[0, 1],[1,1]]);
+// Maze([[0,1,1],[1,0,1],[0,1,1]]);
 // Rectangular
 // Maze([[0,1], [1, 1], [1, 1]]);
 // All zeroes
