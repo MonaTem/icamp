@@ -138,6 +138,7 @@ return false;
 
 const Maze = (a) => {
 
+
   const STATE = {
     UNVISITED:     'UNVISITED',
     VISITING:      'VISITING',
@@ -150,6 +151,13 @@ const Maze = (a) => {
     console.log(STATE.NO_PATH_FOUND);
     return false;
   }
+
+
+  if (a.length === 1 && a[0].length === undefined) {
+    console.log(STATE.PATH_FOUND);
+    return true;
+  }
+
 
   if (a[0].length === 1 || a[0].length === undefined) {
     if (a[0] == 1) {
@@ -166,6 +174,7 @@ const Maze = (a) => {
 
 
   let Memo = a.map(() => Array(nextdim).fill(STATE.UNVISITED));
+
 
   PathExists(a, 0, 0, STATE, Memo);
 
@@ -196,12 +205,12 @@ const Maze = (a) => {
 // Square, path
 // Maze ([[0,1,1,0], [0,0,0,0], [0,0,1,0], [1,1,1,0]]);
 // Square, no path
-Maze([[0,1,1,0], [0,0,0,0], [1,1,1,1], [0,0,0,0]]);
+// Maze([[0,1,1,0], [0,0,0,0], [1,1,1,1], [0,0,0,0]]);
 // Square, no path
 // Maze([[0, 1],[1,1]]);
 // Maze([[0,1,1],[1,0,1],[0,1,1]]);
 // Rectangular
-// Maze([[0,1], [1, 1], [1, 1]]);
+Maze([[0,1], [1, 1], [1, 1]]);
 // All zeroes
 // Maze([0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]);
 // All ones
